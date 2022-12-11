@@ -37,7 +37,7 @@
 <script type="text/javascript">
     $(function () {
 
-        var table = $('.yajra-datatable').DataTable({
+        let  messages = $('.yajra-datatable').DataTable({
             language: {
                 "processing": "Подождите...",
                 "search": "Поиск:",
@@ -73,12 +73,88 @@
                 {data: 'type.name', name: 'type.name'},
                 {data: 'phone', name: 'phone'},
                 {data: 'responsible.name', name: 'responsible.name'},
-                {data: 'closed', name: 'closed'},
                 {data: 'status.name',name: 'status.name'},
+                {data: 'closed', name: 'closed'},
+                {data: 'created_at',name: 'created_at'},
+                {data: 'updated_at',name: 'updated_at'},
                 {data: 'action',name: 'action', orderable: false,searchable: false},
             ]
         });
+        let types = $('.yajra-datatable-type').DataTable({
+            language: {
+                "processing": "Подождите...",
+                "search": "Поиск:",
+                "lengthMenu": "Показать _MENU_ записей",
+                "info": "Записи с _START_ до _END_ из _TOTAL_ записей",
+                "infoEmpty": "Записи с 0 до 0 из 0 записей",
+                "infoFiltered": "(отфильтровано из _MAX_ записей)",
+                "infoPostFix": "",
+                "loadingRecords": "Загрузка записей...",
+                "zeroRecords": "Записи отсутствуют.",
+                "emptyTable": "В таблице отсутствуют данные",
+                "paginate": {
+                    "first": "Первая",
+                    "previous": "Предыдущая",
+                    "next": "Следующая",
+                    "last": "Последняя"
+                },
+                "aria": {
+                    "sortAscending": ": активировать для сортировки столбца по возрастанию",
+                    "sortDescending": ": активировать для сортировки столбца по убыванию"
+                }
 
+            },
+            processing: true,
+            serverSide: true,
+            responsive:true,
+            ajax: "{{ route('types.list') }}",
+            columns: [
+                {data: 'id', name: 'id'},
+                {data: 'name', name: 'name'},
+                {data: 'admin.name', name: 'admin.name'},
+                {data: 'created_at', name: 'created_at'},
+                {data: 'updated_at', name: 'updated_at'},
+                {data: 'action',name: 'action', orderable: false,searchable: false},
+            ]
+        });
+        let status = $('.yajra-datatable-status').DataTable({
+            language: {
+                "processing": "Подождите...",
+                "search": "Поиск:",
+                "lengthMenu": "Показать _MENU_ записей",
+                "info": "Записи с _START_ до _END_ из _TOTAL_ записей",
+                "infoEmpty": "Записи с 0 до 0 из 0 записей",
+                "infoFiltered": "(отфильтровано из _MAX_ записей)",
+                "infoPostFix": "",
+                "loadingRecords": "Загрузка записей...",
+                "zeroRecords": "Записи отсутствуют.",
+                "emptyTable": "В таблице отсутствуют данные",
+                "paginate": {
+                    "first": "Первая",
+                    "previous": "Предыдущая",
+                    "next": "Следующая",
+                    "last": "Последняя"
+                },
+                "aria": {
+                    "sortAscending": ": активировать для сортировки столбца по возрастанию",
+                    "sortDescending": ": активировать для сортировки столбца по убыванию"
+                }
+
+            },
+            processing: true,
+            serverSide: true,
+            responsive:true,
+            ajax: "{{ route('status.list') }}",
+            columns: [
+                {data: 'id', name: 'id'},
+                {data: 'name', name: 'name'},
+                {data: 'type_id', name: 'type_id'},
+                {data: 'admin.name', name: 'admin.name'},
+                {data: 'created_at', name: 'created_at'},
+                {data: 'updated_at', name: 'updated_at'},
+                {data: 'action',name: 'action', orderable: false,searchable: false},
+            ]
+        });
     });
 </script>
 

@@ -35,15 +35,15 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
+                    <a href="{{ route('messages.index') }}" class="nav-link">
+                        <i class="far fa-comments nav-icon"></i>
                         <p>Заявки</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Импорт</p>
+                    <a href="{{ route('user-report.index') }}" class="nav-link">
+                        <i class="far fa-chart-bar nav-icon"></i>
+                        <p>Статистика</p>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -62,21 +62,27 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('status.index') }}" class="nav-link">
                                 <i class="fas fa-tasks nav-icon"></i>
                                 <p>Статусы</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('types.index') }}" class="nav-link">
                                 <i class="fas fa-toolbox nav-icon"></i>
                                 <p>Типы</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Импорт</p>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('logout') }}" class="nav-link">
                         <i class="fas fa-sign-out-alt nav-icon"></i>
                         <p>Выход</p>
                     </a>

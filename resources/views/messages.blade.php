@@ -22,6 +22,15 @@
     <section class="content mt-3">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
+            @if (session('message_created'))
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-success">
+                            {{ session('message_created') }}
+                        </div>
+                    </div>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
@@ -94,6 +103,13 @@
                                 <i class="fas fa-comments"></i>
                                 Заявки
                             </h3>
+                            <div class="card-tools">
+                                <ul class="nav nav-pills ml-auto">
+                                    <li class="nav-item">
+                                        <a href="{{ route('messages.create') }}" class="btn btn-primary" >Добавить</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div><!-- /.card-header -->
                         <div class="card-body">
                             <table class="table table-bordered yajra-datatable">
@@ -102,12 +118,14 @@
                                     <th>No</th>
                                     <th>ФИО</th>
                                     <th>Адрес</th>
-                                    <th>дом</th>
+                                    <th>Дом/Квартира</th>
                                     <th>Примечание</th>
                                     <th>Телефон</th>
                                     <th>Ответственный</th>
-                                    <th>Дату установки</th>
-                                    <th>Выполнена</th>
+                                    <th>Статус</th>
+                                    <th>Закрыта</th>
+                                    <th>Создана</th>
+                                    <th>Изменена</th>
                                     <th></th>
                                 </tr>
                                 </thead>

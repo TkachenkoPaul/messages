@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
             StatusTypeSeeder::class,
         ]);
         User::factory()->count(5)->create();
-        Messages::factory()->count(50)->create();
+        Messages::factory()->count(250)->create();
     }
 }

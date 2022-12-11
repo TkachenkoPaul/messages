@@ -9,7 +9,7 @@
                     <!-- small box -->
                     <div class="small-box bg-gradient-primary">
                         <div class="inner">
-                            <h3>{{ $data['all'] }}</h3>
+                            <h3>11</h3>
 
                             <p>Всего заявок</p>
                         </div>
@@ -24,7 +24,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>{{ $data['opened'] }}</h3>
+                            <h3>11</h3>
 
                             <p>Открыто</p>
                         </div>
@@ -39,7 +39,7 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>{{ $data['closed'] }}</h3>
+                            <h3>11</h3>
 
                             <p>Закрыто</p>
                         </div>
@@ -54,7 +54,7 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>{{ $data['waiting'] }}</h3>
+                            <h3>11</h3>
 
                             <p>Ожидают</p>
                         </div>
@@ -74,22 +74,18 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-comments"></i>
-                                Заявки
+                                Типы заявок
                             </h3>
                         </div><!-- /.card-header -->
                         <div class="card-body">
-                            <table class="table table-bordered yajra-datatable">
+                            <table class="table table-bordered yajra-datatable-type">
                                 <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>ФИО</th>
-                                    <th>Адрес</th>
-                                    <th>дом</th>
-                                    <th>Примечание</th>
-                                    <th>Телефон</th>
-                                    <th>Ответственный</th>
-                                    <th>Дату установки</th>
-                                    <th>Выполнена</th>
+                                    <th>Имя</th>
+                                    <th>Админ</th>
+                                    <th>Добавил</th>
+                                    <th>Изменил</th>
                                     <th></th>
                                 </tr>
                                 </thead>
