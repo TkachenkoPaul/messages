@@ -32,66 +32,37 @@
                 </div>
             @endif
             <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-gradient-primary">
-                        <div class="inner">
-                            <h3>{{ $data['all'] }}</h3>
+{{--                @foreach($data['status'] as $status)--}}
+{{--                    <div class="col-lg-3 col-6">--}}
+{{--                        <!-- small box -->--}}
+{{--                        <div class="small-box bg-danger">--}}
+{{--                            <div class="inner">--}}
+{{--                                <h3>{{ $status->messages_count }}</h3>--}}
 
-                            <p>Всего заявок</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-tasks"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Просмотр <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <h3>{{ $data['opened'] }}</h3>
+{{--                                <p>{{ $status->name }}</p>--}}
+{{--                            </div>--}}
+{{--                            <div class="icon">--}}
+{{--                                <i class="fas fa-comment-dots"></i>--}}
+{{--                            </div>--}}
+{{--                            <a href="{{ $status->type_id }}" class="small-box-footer">Просмотр <i class="fas fa-arrow-circle-right"></i></a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+                @foreach($data['status'] as $status)
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box elevation-3">
+                            <span class="info-box-icon bg-gradient-primary"><i class="far fa-envelope"></i></span>
 
-                            <p>Открыто</p>
+                            <div class="info-box-content">
+                                <span class="info-box-text">{{ $status->name }}</span>
+                                <span class="info-box-number">{{ $status->messages_count }}</span>
+                            </div>
+                            <!-- /.info-box-content -->
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Просмотр <i class="fas fa-arrow-circle-right"></i></a>
+                        <!-- /.info-box -->
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h3>{{ $data['closed'] }}</h3>
+                @endforeach
 
-                            <p>Закрыто</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-check"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Просмотр <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3>{{ $data['waiting'] }}</h3>
-
-                            <p>Ожидают</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-comment-dots"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Просмотр <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
             </div>
             <!-- /.row -->
             <!-- Main row -->
