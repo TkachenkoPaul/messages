@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MessagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/messages',[MessagesController::class,'index'])->name('messages.index');
+    Route::get('/messages/list',[MessagesController::class,'datatables'])->name('messages.list');
+});
+
+require __DIR__.'/auth.php';
