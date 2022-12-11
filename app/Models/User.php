@@ -67,4 +67,26 @@ class User extends Authenticatable
         'created_at' => 'datetime:Y-m-d h:i:s', // Change your format
         'updated_at' => 'datetime:Y-m-d h:i:s',
     ];
+
+    public function opened()
+    {
+        return $this->hasMany(Messages::class,'responsible_id','id')
+            ->where('messages.messages.status_id','=','0');
+    }
+
+    public function done()
+    {
+        return $this->hasMany(Messages::class,'responsible_id','id')
+            ->where('messages.messages.status_id','=','1');
+    }
+    public function closed()
+    {
+        return $this->hasMany(Messages::class,'responsible_id','id')
+            ->where('messages.messages.status_id','=','2');
+    }
+    public function edit()
+    {
+        return $this->hasMany(Messages::class,'responsible_id','id')
+            ->where('messages.messages.status_id','=','3');
+    }
 }

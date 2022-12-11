@@ -37,6 +37,53 @@
 <script type="text/javascript">
     $(function () {
 
+        //Date range picker
+        $('#reservation').daterangepicker({
+            startDate: moment().startOf('month'),
+            endDate: moment().endOf('month'),
+            ranges: {
+                'Сегодня': [moment(), moment()],
+                'Вчера': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Неделя': [moment().startOf('isoWeek'), moment().endOf('isoWeek')],
+                'Месяц': [moment().startOf('month'), moment().endOf('month')],
+                'Последние 7 дей': [moment().subtract(6, 'days'), moment()],
+                'Последние 30 дней': [moment().subtract(29, 'days'), moment()],
+                'Последний месяц': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1,
+                    'month').endOf('month')]
+            },
+            alwaysShowCalendars: true,
+            showDropdowns: true,
+            locale: {
+                format: 'YYYY-MM-DD',
+                cancelLabel: 'Очистить',
+                applyLabel: 'Принять',
+                "daysOfWeek": [
+                    "Вс",
+                    "Пн",
+                    "Вт",
+                    "Ср",
+                    "Чт",
+                    "Пт",
+                    "Сб"
+                ],
+                "monthNames": [
+                    "Январь",
+                    "Февраль",
+                    "Март",
+                    "Апрель",
+                    "Май",
+                    "Июнь",
+                    "Июль",
+                    "Август",
+                    "Сентябрь",
+                    "Октябрь",
+                    "Ноябрь",
+                    "Декабрь"
+                ],
+                firstDay: 1,
+            },
+        })
+        //Date range picker with time picker
         let  messages = $('.yajra-datatable').DataTable({
             language: {
                 "processing": "Подождите...",
@@ -64,7 +111,7 @@
             processing: true,
             serverSide: true,
             responsive:true,
-            ajax: "{{ route('messages.list') }}",
+            ajax: "{{ $data['request'] ?? ''}}",
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'fio', name: 'fio'},
