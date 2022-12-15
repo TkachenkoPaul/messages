@@ -68,6 +68,11 @@ class User extends Authenticatable
         'updated_at' => 'datetime:Y-m-d h:i:s',
     ];
 
+    public function master()
+    {
+        return $this->hasOne(User::class,'id','admin_id');
+    }
+
     public function opened()
     {
         return $this->hasMany(Messages::class,'responsible_id','id')
@@ -88,5 +93,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Messages::class,'responsible_id','id')
             ->where('messages.messages.status_id','=','3');
+    }
+    public function plan()
+    {
+        return $this->hasMany(Messages::class,'responsible_id','id')
+            ->where('messages.messages.status_id','=','4');
     }
 }

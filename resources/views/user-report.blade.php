@@ -14,83 +14,50 @@
         <div class="container-fluid">
             <!-- Main row -->
             <div class="row">
-                @foreach($users as $user)
-                    <section class="col-lg-12 connectedSortable">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    <i class="fas fa-comments"></i>
-                                    {{ $user->name }}
-                                </h3>
-                            </div><!-- /.card-header -->
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-3 col-6">
-                                        <!-- small box -->
-                                        <div class="small-box bg-gradient-primary">
-                                            <div class="inner">
-                                                <h3>{{ $user->opened_count }}</h3>
-
-                                                <p>Открыто</p>
+                <section class="col-lg-12 connectedSortable">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-comments"></i>
+                                Мастера
+                            </h3>
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-8 col-lg-6">
+                                    <form action="{{ route('user-report.index') }}" method="GET">
+                                        <!-- Date range -->
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input name="date-range" type="text" class="form-control float-right"
+                                                    id="reservation">
+                                                <span class="input-group-append">
+                                                    <button type="submit" class="btn btn-primary">Показать</button>
+                                                </span>
                                             </div>
-                                            <div class="icon">
-                                                <i class="fas fa-tasks"></i>
-                                            </div>
-                                            <a href="#" class="small-box-footer">Просмотр <i class="fas fa-arrow-circle-right"></i></a>
+                                            <!-- /.input group -->
                                         </div>
-                                    </div>
-                                    <!-- ./col -->
-                                    <div class="col-lg-3 col-6">
-                                        <!-- small box -->
-                                        <div class="small-box bg-success">
-                                            <div class="inner">
-                                                <h3>{{ $user->done_count }}</h3>
-
-                                                <p>Выполнено</p>
-                                            </div>
-                                            <div class="icon">
-                                                <i class="fas fa-tools"></i>
-                                            </div>
-                                            <a href="#" class="small-box-footer">Просмотр <i class="fas fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                    <!-- ./col -->
-                                    <div class="col-lg-3 col-6">
-                                        <!-- small box -->
-                                        <div class="small-box bg-info">
-                                            <div class="inner">
-                                                <h3>{{ $user->closed_count }}</h3>
-
-                                                <p>Не выполнена и закрыта</p>
-                                            </div>
-                                            <div class="icon">
-                                                <i class="fas fa-check"></i>
-                                            </div>
-                                            <a href="#" class="small-box-footer">Просмотр <i class="fas fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                    <!-- ./col -->
-                                    <div class="col-lg-3 col-6">
-                                        <!-- small box -->
-                                        <div class="small-box bg-danger">
-                                            <div class="inner">
-                                                <h3>{{ $user->edit_count }}</h3>
-
-                                                <p>Правка</p>
-                                            </div>
-                                            <div class="icon">
-                                                <i class="fas fa-comment-dots"></i>
-                                            </div>
-                                            <a href="#" class="small-box-footer">Просмотр <i class="fas fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                    <!-- ./col -->
+                                    </form>
                                 </div>
-                            </div><!-- /.card-body -->
-                        </div>
-                    </section>
-                @endforeach
-
+                            </div>
+                            <table class="table table-bordered  responsive yajra-datatable-user-report">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Мастер</th>
+                                        <th>Открыто</th>
+                                        <th>Выполнено</th>
+                                        <th>Не выполнено и закрыто</th>
+                                        <th>Доработка</th>
+                                        <th>Запланировано</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div><!-- /.card-body -->
+                    </div>
+                </section>
             </div>
             <!-- /.row (main row) -->
         </div><!-- /.container-fluid -->
