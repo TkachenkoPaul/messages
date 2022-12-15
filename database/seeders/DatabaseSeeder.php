@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             MessageTypeSeeder::class,
             StatusTypeSeeder::class,
         ]);
-        User::factory()->count(5)->create();
-        Messages::factory()->count(250)->create();
+//        User::factory()->count(5)->create();
+//        Messages::factory()->count(250)->create();
     }
 }

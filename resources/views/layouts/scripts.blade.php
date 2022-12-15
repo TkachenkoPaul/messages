@@ -349,12 +349,6 @@
                     searchable: true,
                 },
                 {
-                    data: 'disable',
-                    name: 'disable',
-                    orderable: true,
-                    searchable: false,
-                },
-                {
                     data: 'master.name',
                     name: 'master.name',
                     orderable: true,

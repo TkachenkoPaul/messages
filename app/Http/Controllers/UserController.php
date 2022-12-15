@@ -35,13 +35,6 @@ class UserController extends Controller
                 ->editColumn('name', function($row) {
                     return "<span class=\"username\"><a href=\"".route('users.show',$row->id)."\">".$row->name."</a></span>";
                 })
-                 ->editColumn('disable', function($row) {
-                    if ($row->disable === 0) {
-                        return "<i class=\"fas fa-check\"></i>";
-                    } else {
-                        return "<i class=\"fas fa-times\"></i>";
-                    }
-                })
                 ->rawColumns(['action','name','disable'])
                 ->toJson();
         }
@@ -112,6 +105,7 @@ class UserController extends Controller
         } else {
             $user->name = $request->name;
             $user->login = $request->login;
+            $user->disable = $request->disable;
             $user->password = Hash::make($request->password);
             $user->save();
         }

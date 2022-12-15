@@ -34,6 +34,21 @@
                                         class="form-control form-control-border border-width-2" id="password"
                                         name="password" placeholder="Пароль">
                                 </div>
+                                <div class="form-group">
+                                    <label for="disable" class="text-muted">Статус</label>
+                                    <select class="custom-select form-control-border border-width-2"
+                                            id="disable" required name="disable">
+                                        @if (isset($user->disable))
+                                            @if ($user->disable == 0)
+                                                <option value="0" selected>Активирован</option>
+                                                <option value="1">Заблокирован</option>
+                                            @elseif ($user->disable == 1)
+                                                <option value="0">Активирован</option>
+                                                <option value="1" selected>Заблокирован</option>
+                                            @endif
+                                        @endif
+                                    </select>
+                                </div>
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul>

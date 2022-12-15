@@ -24,7 +24,9 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'disable' => '',
+            'login' => '',
+            'name' => '',
         ];
     }
 }
